@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: s3-upload
+spec:
+  schedule: "0 3 * * *"  # Daily at 3 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: uploader
+            image: amazon/aws-cli
+            command:
+              - /bin/sh
+              - -c
+              - |
+                LATEST_FILE=$(ls -t /mnt/backup/*.sql.gz | head -n1)
+                echo "Uploading $LATEST_FILE to S3..."
+                aws s3 cp "$LATEST_FILE" s3://mysql-backups-quantumsoft/mysql/
+            volumeMounts:
+            - name: backup-volume
+              mountPath: /mnt/backup
+          restartPolicy: OnFailure
+          volumes:
+          - name: backup-volume
+            persistentVolumeClaim:
+              claimName: mysql-backup-pvc
