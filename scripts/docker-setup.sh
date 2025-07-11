@@ -17,3 +17,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 echo "Docker & Docker Compose installed successfully!"
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+echo "Created the new group and updated docker successfully!"
