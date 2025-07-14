@@ -51,10 +51,10 @@ pipeline {
             }
         }
 
-        stage("Deploy Application") {
+                stage("Deploy Application") {
             steps {
-                echo "This is deploying application"
-                sh "docker-compose down && docker-compose up --build -d"
+                echo "Deploying application using Kubernetes manifests"
+                sh "kubectl apply -f k8s/"
             }
         }
     }
