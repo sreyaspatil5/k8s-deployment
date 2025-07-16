@@ -54,10 +54,9 @@ pipeline {
                 stage("Deploy Application") {
             steps {
                 echo "Deploying application using Kubernetes manifests"
-                sh '''
-                kubectl delete -f k8s/
-                sleep 3
-                kubectl apply -f k8s/
+                sh ''' 
+                docker compose down
+                docker compose up -d
                 '''
             }
         }
