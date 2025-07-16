@@ -56,7 +56,7 @@ pipeline {
                 echo "Deploying application using Kubernetes manifests"
                 sh ''' 
                 docker compose down
-                docker compose up -d
+                kubectl apply -f .
                 '''
             }
         }
