@@ -32,12 +32,13 @@ pipeline {
         stage("SonarQube Analysis") {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh '''
-                    sonar-scanner \
-                      -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-                      -Dsonar.sources=. \
-                      -Dsonar.host.url=${SONAR_HOST_URL}
-                    '''
+                    script {
+                        def scannerHome = tool 'SonarScanner-CLI'
+                        sh "${scannerHome}/bin/sonar-scanner " +
+                           "-Dsonar.projectKey=${SONAR_PROJECT_KEY} " +
+                           "-Dsonar.sources=. " +
+                           "-Dsonar.host.url=${SONAR_HOST_URL}"
+                    }
                 }
             }
         }
