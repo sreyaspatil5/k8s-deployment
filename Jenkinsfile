@@ -3,10 +3,16 @@
 pipeline {
     agent { label "k8s" }
 
+        tools {
+        sonarQubeScanner 'SonarScanner-CLI'  // Matches the tool name in Global Tool Config
+        }
+
     environment {
         FRONTEND_IMAGE = "spquantum/frontend"
         BACKEND_IMAGE  = "spquantum/backend"
         IMAGE_TAG      = "q1"
+        SONAR_PROJECT_KEY  = "quantumsoft-app"
+        SONAR_HOST_URL     = "http://13.233.150.66:9000"
     }
 
     stages {
