@@ -26,6 +26,19 @@ pipeline {
             }
         }
 
+        stage("SonarQube Analysis") {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    sh '''
+                    sonar-scanner \
+                      -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                      -Dsonar.sources=. \
+                      -Dsonar.host.url=${SONAR_HOST_URL}
+                    '''
+                }
+            }
+        }
+
         stage("Setup Docker & Compose") {
             steps {
                 sh "chmod +x scripts/docker-setup.sh"
