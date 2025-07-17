@@ -3,9 +3,6 @@
 pipeline {
     agent { label "k8s" }
 
-        tools {
-        sonarQubeScanner 'SonarScanner-CLI'  // Matches the tool name in Global Tool Config
-        }
 
     environment {
         FRONTEND_IMAGE = "spquantum/frontend"
