@@ -3,6 +3,8 @@
 
 This repository contains a Kubernetes-based deployment of a three-tier web application architecture consisting of a frontend, backend, and MySQL database. It includes CI/CD integration with Jenkins and a scheduled backup system that uploads MySQL dumps to Amazon S3.
 
+DELETED THE "dist" FOLDER AND  JAR FILE  DUE TO PRIVACY POLICY
+
 ## 🔧 Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
