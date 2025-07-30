@@ -5,7 +5,12 @@ This repository contains a Kubernetes-based deployment of a three-tier web appli
 
 DELETED THE "dist" FOLDER AND   "jar" FILE  DUE TO PRIVACY POLICY
 
-## 🔧 Tech Stack
+## Project Structure
+
+<img width="935" height="994" alt="Screenshot 2025-07-30 131301" src="https://github.com/user-attachments/assets/85061bb0-9130-4dfa-bb9e-af61222c6ba4" />
+
+
+## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Spring Boot (Java)
@@ -16,7 +21,7 @@ DELETED THE "dist" FOLDER AND   "jar" FILE  DUE TO PRIVACY POLICY
 - **Backup:** Shell script with AWS CLI to S3
 - **Monitoring (optional):** Prometheus, Grafana
 
-## 📦 Features
+## Features
 
 - Modular three-tier architecture
 - Persistent storage for MySQL using PV/PVC
@@ -24,7 +29,7 @@ DELETED THE "dist" FOLDER AND   "jar" FILE  DUE TO PRIVACY POLICY
 - Scheduled MySQL backups to Amazon S3
 - Scalable and production-ready setup
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 ├── frontend/
@@ -43,7 +48,7 @@ DELETED THE "dist" FOLDER AND   "jar" FILE  DUE TO PRIVACY POLICY
 │   └── s3-backup.sh
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -78,11 +83,11 @@ kubectl apply -f k8s/services/
 - Update AWS credentials in `s3-backup.sh`.
 - Schedule the script using `cron` or Kubernetes `CronJob`.
 
-## 📚 Reference Tutorial
+## Reference Tutorial
 
-For a full walkthrough, visit the [Code2Tutorial guide](https://code2tutorial.com/tutorial/47e7ad22-e14b-40ac-95d5-e6f7d33f6946/index.md).
+For a full walkthrough, visit the [Code2Tutorial](https://code2tutorial.com/tutorial/47e7ad22-e14b-40ac-95d5-e6f7d33f6946/index.md).
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
