@@ -83,6 +83,5 @@ For a full walkthrough, visit the [Code2Tutorial guide](https://code2tutorial.co
 ## 📄 License
 
 This project is licensed under the MIT License.
-```
 
-Let me know if you want to add Prometheus/Grafana setup steps or polish it for open-source contribution. I’ve got your back! 💪
+
